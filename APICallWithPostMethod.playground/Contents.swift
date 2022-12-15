@@ -27,24 +27,24 @@ let jsonData = try JSONEncoder().encode(newTodoItem)
 
 request.httpBody = jsonData
 
-    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-        
-        if let error = error {
-            print("Error took place \(error)")
-            return
-        }
-        guard let data = data else {return}
-
-        do{
-            //Decode the response into todoItemModel object
-            let todoItemModel = try JSONDecoder().decode(ToDoResponseModel.self, from: data)
-            print("Response data:\n \(todoItemModel)")
-            print("todoItemModel Title: \(todoItemModel.title)")
-            print("todoItemModel id: \(todoItemModel.id ?? 0)")
-        }catch let jsonErr{
-            print(jsonErr)
-       }
-
- 
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    
+    if let error = error {
+        print("Error took place \(error)")
+        return
+    }
+    guard let data = data else {return}
+    
+    do{
+        //Decode the response into todoItemModel object
+        let todoItemModel = try JSONDecoder().decode(ToDoResponseModel.self, from: data)
+        print("Response data:\n \(todoItemModel)")
+        print("todoItemModel Title: \(todoItemModel.title)")
+        print("todoItemModel id: \(todoItemModel.id ?? 0)")
+    }catch let jsonErr{
+        print(jsonErr)
+    }
+    
+    
 }
 task.resume()
