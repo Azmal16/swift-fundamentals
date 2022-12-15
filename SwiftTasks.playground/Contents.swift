@@ -15,6 +15,9 @@ struct HighScore: Decodable {
 }
 
 func fetchUpdates() async {
+    
+    //Declaring the return value of the task
+    //Tasks can run concurrently with other codes
     let newsTask = Task { () -> [NewsItem] in
         let url = URL(string: "https://hws.dev/headlines.json")!
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -28,6 +31,7 @@ func fetchUpdates() async {
     }
 
     do {
+        //Accessing the return value of a task
         let news = try await newsTask.value
         let highScores = try await highScoreTask.value
         print("Latest news loaded with \(news.count) items.")
@@ -35,8 +39,8 @@ func fetchUpdates() async {
         if let topScore = highScores.first {
             print("\(topScore.name) has the highest score with \(topScore.score), out of \(highScores.count) total results.")
         }
-    } catch {
-        print("There was an error loading user data.")
+    } catch let error {
+        print("There was an error loading user data \(error)")
     }
 }
 
