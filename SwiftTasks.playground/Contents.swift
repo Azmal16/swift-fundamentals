@@ -31,7 +31,7 @@ func fetchUpdates() async {
     }
 
     do {
-        //Accessing the return value of a task
+        //Accessing the return value of a tasks
         let news = try await newsTask.value
         let highScores = try await highScoreTask.value
         print("Latest news loaded with \(news.count) items.")
