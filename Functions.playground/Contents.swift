@@ -8,6 +8,7 @@ print(myFuncOne(a: 15))
 
 //Different styles of parameter names
 func myFuncTwo(firstNum a:Int, sedondNum b:Int = 10) -> Int{
+    //a and b are only accessible inside the function scope
     return a+b
 }
 
