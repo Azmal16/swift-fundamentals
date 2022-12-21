@@ -4,7 +4,7 @@ Fundamentals and Basics of Swift programming language.
 Contents covered yet:
 <br>
 1. Variables and Constants
-2. Functions
+2. Functions and parameter styles
 3. Structures
 4. Property Wrappers
 5. Stored and Computed properties
