@@ -16,7 +16,7 @@ print(myFuncTwo(firstNum: 100))
 
 //Keeping parameter name only inside function
 func myFuncThree(_ name: String) {
-    print("The 2022 world cup winner is: \(name)")
+    print("The ultimate GOAT is: \(name)")
 }
 
 myFuncThree("Messi!")
