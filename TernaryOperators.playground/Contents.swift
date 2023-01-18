@@ -12,3 +12,19 @@ let num = 7
 let resultNum = (num == 0) ? "Zero" : ((num > 0) ? "Positive" : "Negative")
 
 print("The number is \(resultNum).")
+
+let ageGroup = 33
+
+switch ageGroup {
+  case 0...16:
+    print("Child")
+
+  case 17...30:
+    print("Young Adults")
+
+  case 31...45:
+    print("Middle-aged Adults")
+
+  default:
+    print("Old-aged Adults")
+}
