@@ -12,3 +12,6 @@ Fundamentals and Basics of Swift programming language.
 6. API Calls with POST Method
 7. Creating and running Swift Tasks
 8. Swift Protocols
+9. Switch Statements
+10. Ternary Operators
+11. Enums
