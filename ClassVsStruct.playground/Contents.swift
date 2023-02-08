@@ -46,3 +46,21 @@ stolenBike.color = "Black"
 print("Color of Stolen Bike: \(stolenBike.color)")
 print("Color of My Bike: \(myBike.color)")
 //These two bike variables are not pointing to the same object.
+
+//Example of class inheritence...stucts can't inherit
+class F1Car: Car {
+    var team: String = ""
+    var driver1: String = ""
+    var driver2: String = ""
+    
+    init(manufactureYear: Int, manufacturer: String, color: String, team: String, driver1: String, driver2: String) {
+        self.team = team
+        self.driver1 = driver1
+        self.driver2 = driver2
+        super.init(manufactureYear: manufactureYear, manufacturer: manufacturer, color: color)
+    }
+}
+
+var redBull = F1Car(manufactureYear: 2023, manufacturer: "RedBull", color: "Red and Blue", team: "RedBull", driver1: "Max", driver2: "Perez")
+print("Driver 1 of RedBull: \(redBull.driver1)")
+//Prints: Driver 1 of RedBull: Max
